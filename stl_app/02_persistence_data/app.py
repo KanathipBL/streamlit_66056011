@@ -12,7 +12,7 @@ import streamlit as st
 #
 # st.write('My new To-Do list is:', my_todo_list)
 
-# TODO
+## TODO
 # 1. make it save to session state
 #    https://docs.streamlit.io/library/api-reference/session-state
 # 2. add a number input for number of day for each todo.
