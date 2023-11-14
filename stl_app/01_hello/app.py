@@ -3,30 +3,26 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# --- 01
+##--- 01
 # https://docs.streamlit.io/library/api-reference/write-magic
-# st.markdown('สวัสดี! **Streamlit**')
-# st.write('จากโค้ด', '`st.markdown("สวัสดี!")`')
-# st.write(pd.DataFrame({
-#     'first column': [1, 2, 3, 4],
-#     'second column': [10, 20, 30, 40],
-# }))
-# st.divider()
+st.markdown('สวัสดี! *Streamlit*')
+st.write('จากโค้ด', '`st.markdown("สวัสดี!")`')
+st.write(pd.DataFrame({'first column': [1, 2, 3, 4], 'second column': [10, 20, 30, 40],}))
+st.divider()
 
 # --- 02
-# binom_dist = np.random.binomial(1, .5, 100)
-# st.write(np.mean(binom_dist))
+binom_dist = np.random.binomial(1, .5, 100)
+st.write(np.mean(binom_dist))
 
 # --- 03
 binom_dist = np.random.binomial(1, .5, 1000)
-# list_of_means = []
-# for i in range(0, 1000):
-#     list_of_means.append(
-#         np.random.choice(binom_dist, 100, replace=True).mean())
-#
-# fig1, ax1 = plt.subplots()
-# ax1 = plt.hist(list_of_means)
-# st.pyplot(fig1)
+list_of_means = []
+for i in range(0, 1000):
+    list_of_means.append(np.random.choice(binom_dist, 100, replace=True).mean())
+
+fig1, ax1 = plt.subplots()
+ax1 = plt.hist(list_of_means)
+st.pyplot(fig1)
 
 # --- 04
 # fig2, ax2 = plt.subplots()
