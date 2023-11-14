@@ -64,3 +64,32 @@ new_prediction = rfc.predict([[sepal_length,
                                petal_width]])
 prediction_species = unique_iris_mapping[new_prediction][0]
 st.write('We predict your IRIS is of the {} species'.format(prediction_species))
+
+#เพิ่มscatter plotจ้า
+st.title("Iris ")
+st.markdown('สร้าง `scatter plot` แสดงผลข้อมูล **Palmer\'s Penguins** กัน แบบเดียวกับ **Iris dataset**')
+
+choices = ['sepal.length',
+           'sepal.width',
+           'petal.length',
+           'petal.width']
+
+selected_x_var = st.selectbox('เลือก แกน x', (choices))
+selected_y_var = st.selectbox('เลือก แกน y', (choices))
+
+
+st.subheader('ข้อมูลตัวอย่าง')
+st.write(iris_df)
+
+st.subheader('แสดงผลข้อมูล')
+sns.set_style('darkgrid')
+markers = {"Setosa": "v", "Versicolor": "s", "Virginica": 'o'}
+
+fig, ax = plt.subplots()
+ax = sns.scatterplot(data=iris_df,
+                     x=selected_x_var, y=selected_y_var,
+                     hue='variety', markers=markers, style='variety')
+plt.xlabel(selected_x_var)
+plt.ylabel(selected_y_var)
+plt.title("Iris Data")
+st.pyplot(fig)
